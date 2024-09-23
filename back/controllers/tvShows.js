@@ -69,6 +69,7 @@ const getTVShowByID = async (req, res = response) => {
 
 // Método para obtener programas de TV en tendencia por página
 //http://localhost:3000/api/v1/tv/trending/week?page=2
+//revisar aca 
 const getTrendingTVShowsByPage = async (req, res) => {
     try {
         const { time_window = 'week' } = req.params;
