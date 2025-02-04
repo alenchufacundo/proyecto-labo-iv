@@ -25,9 +25,10 @@ const getPuntuados = async (req = request, res = response) => {
     }
 
     console.log(allMovies)
-    // Filtrar solo los campos `title` , `id` , `vote_count` y `vote_average`
+    // Filtrar solo los campos `title` , `id` , `vote_count` y `vote_average` y `video` 
     const filteredMovies = allMovies.slice(0, totalMovies).map(movie => ({
       title: movie.title,
+      poster_path: movie.poster_path,
       id: movie.id,
       vote_count: movie.vote_count,
       vote_average: movie.vote_average
@@ -62,6 +63,7 @@ const getPuntuadoById = async (req = request, res = response) => {
     // Filtrar solo los campos `vote_count` y `vote_average`
     const movieData = {
       title: data.title,
+      poster_path: movie.poster_path,
       id: data.id,
       vote_count: data.vote_count,
       vote_average: data.vote_average
